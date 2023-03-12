@@ -43,7 +43,7 @@ function setup() {
    // write a code to set value of restitution such that:
    restitution: 0.22,
    // Rock (Red Circle) bounces less when it hits the bottom.
-   frictionAir:0
+   frictionAir:0.01
   }
    
   btn2 = createImg('up.png');
@@ -84,6 +84,7 @@ pop();
 function vForce()
 { //write a code to move ball up when the button is clicked.
   Matter.Body.applyForce(ball, {x:0,y:0}, {x:0,y:-0.05});
+  Matter.Body.applyForce(rock, {x:0,y:0}, {x:-0,y:-0.05});
 
 }
 
